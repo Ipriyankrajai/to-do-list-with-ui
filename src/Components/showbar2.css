@@ -1,0 +1,16 @@
+.main-input{
+    height: 50px;
+    width: 80%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 80px;
+
+    display: flex;
+    border: 1px solid black;
+    align-items: center;
+    justify-content:left ;
+}
+input{
+    margin-left: 10px;
+    margin-right: 10px;
+}
