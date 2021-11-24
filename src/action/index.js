@@ -1,6 +1,8 @@
 export const addingToDo='addingToDo';
 export const deleteFromToDo='deleteFromToDo';
 export const editStatusFromToDo='editStatusFromToDo';
+export const editNewValue='editNewValue';
+
 
 
 export const addingToDoFn=(data)=>{
@@ -25,3 +27,12 @@ export const editStatusFromToDoFn=(data)=>{
         payload:data
     }
 }
+
+export const editNewValueFn=(data)=>{
+
+    return{
+        type:editNewValue,
+        payload:data
+    }
+}
+

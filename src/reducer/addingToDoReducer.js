@@ -1,4 +1,4 @@
-import {addingToDo,deleteFromToDo,editStatusFromToDo} from '../action/index.js'
+import {addingToDo,deleteFromToDo,editStatusFromToDo,editNewValue} from '../action/index.js'
 
 
 const intstate={
@@ -6,7 +6,7 @@ const intstate={
 }
 let globalval=0;
 const addingToDoReducer=(state=intstate,action)=>{
-    console.log(typeof state.todos,action.payload)
+    console.log('action kya hai',action)
     switch(action.type){
         case addingToDo:
 
@@ -20,6 +20,7 @@ const addingToDoReducer=(state=intstate,action)=>{
                     todos:newTodo
                 }
            case editStatusFromToDo:
+               console.log("in editstaus")
                let newToDo2=[]
                state.todos.forEach((i)=>{
                    if(i.uniquekey===action.payload){
@@ -33,6 +34,21 @@ const addingToDoReducer=(state=intstate,action)=>{
                    todos:newToDo2
                }
 
+            case editNewValue:
+                console.log("edit new val ");
+               let newToDo3=[]
+               state.todos.forEach((i)=>{
+                   if(i.uniquekey===action.payload[0]){
+                       i.val=action.payload[1];
+                       console.log("reducer",i.val,action.payload.new)
+                   }
+                   newToDo3.push(i);
+
+               })
+
+               return{
+                   todos:newToDo3
+               }
 
 
         default:
