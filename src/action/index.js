@@ -3,6 +3,8 @@ export const deleteFromToDo='deleteFromToDo';
 export const editStatusFromToDo='editStatusFromToDo';
 export const editNewValue='editNewValue';
 
+export const searchValue='searchValue';
+
 
 
 export const addingToDoFn=(data)=>{
@@ -32,6 +34,14 @@ export const editNewValueFn=(data)=>{
 
     return{
         type:editNewValue,
+        payload:data
+    }
+}
+
+export const searchValueFn=(data)=>{
+
+    return{
+        type:searchValue,
         payload:data
     }
 }
